@@ -1,1 +1,1 @@
-# 0x00. Python - Hello, World
+This is the readme file for the 0x00 python hello world directory.
