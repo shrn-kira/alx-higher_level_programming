@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""
-fetch https://alx-intranet.hbtn.io/status
-"""
+"""  fetches https://alx-intranet.hbtn.io/status """
 
-if __name__ == '__main__':
-    import urllib.request
-    req = urllib.request.Request('https://intranet.hbtn.io/status')
-    with urllib.request.urlopen(req) as response:
-        html = response.read()
+if __name__ == "__main__":
+    from urllib.request import urlopen, Request
+
+    url = "https://alx-intranet.hbtn.io/status"
+    req = Request(url)
+    with urlopen(req) as res:
+        content = res.read()
 
     print("Body response:")
-    print("\t- type: {}".format(html.__class__))
-    print("\t- content: {}".format(html))
-    print("\t- utf8 content: {}".format(html.decode('ascii')))
+    print(f"\t- type: {type(content)}")
+    print(f"\t- content: {content}")
+    print(f"\t- utf8 content: {content.decode('utf-8')}")
