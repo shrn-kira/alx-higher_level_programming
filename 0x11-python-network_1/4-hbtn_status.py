@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""
-same as 0-hbtn_status with requests model
-"""
+""" script that fetches https://alx-intranet.hbtn.io/status """
+from requests import get
 
 if __name__ == '__main__':
-    import requests
-    html = requests.get('https://intranet.hbtn.io/status')
-    print("Body response:")
-    print("\t- type: {}".format(html.text.__class__))
-    print("\t- content: {}".format(html.text))
+    res = get('https://alx-intranet.hbtn.io/status')
+    print('Body response:')
+    print('\t- type:', type(res.text))
+    print('\t- content:', res.text)
